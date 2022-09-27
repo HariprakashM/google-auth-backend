@@ -6,9 +6,6 @@ const Client = new OAuth2Client("839291234313-4g4ledigi5l12p33o7foes0rsq3hv49l.a
 router.post('/register', async (req, res) => {
 
     try {
-        //   const salt = await bcryptjs.genSalt(10);
-        //   const hash = await bcryptjs.hash(req.body.password, salt);
-        //   req.body.password = hash;
         const newuser = new User(req.body);
         const user = await newuser.save();
         res.json({ message: "User Registered Successfully" });
